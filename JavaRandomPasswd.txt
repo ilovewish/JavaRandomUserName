@@ -1,0 +1,118 @@
+package numbertest;
+
+public class randompasswd {
+	
+	/**
+	 * 随机生成用户的密码字符串，包含数字大小写字母和特殊字符
+	 * 生成规则,不以数字和特殊字符开头，顺序是小写-大写-数字-特殊字符
+     * 支持6、8、10、12位的密码生成
+     * 默认大写字母和特殊字符分配的权重高
+	 * @param args
+	 */
+	public static void main(String[] args) {
+//		produce();
+		//根据传参不同输出不同位数的密码
+		System.out.println(random(12));
+	}
+	
+	
+	
+    /**
+     * 生成规则,不以数字和特殊字符开头，顺序是小写-大写-数字-特殊字符
+     * 支持6、8、10、12位的密码生成
+     * 默认大写字母和特殊字符分配的权重高
+     */
+	public static String random(int flag)
+	{   //最终生成的密码字符串
+		String passwd = "";
+		//小写
+		String loww = "";
+		//大写
+		String upww = "";
+		//特殊字符串
+		String spww = "";
+		//数字
+		String nuww = "";
+		
+		String[] loword = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
+		String[] upword = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"};
+		String[] spword = {"!","@","#","$","%","^","&","*","/","{","/","}","/","[","/","]","-","/","+","/","=","/","<","/",">","/",",","/",".","/",";","/","~"};
+		String[] number = {"1","2","3","4","5","6","7","8","9","0"};
+		
+		if(flag == 6)
+		{
+			 loww += loword[((int)(Math.random()*loword.length))];
+			 upww += upword[((int)(Math.random()*upword.length))];
+			 upww += upword[((int)(Math.random()*upword.length))];
+			 spww += spword[((int)(Math.random()*spword.length))];
+			 spww += spword[((int)(Math.random()*spword.length))];
+			 nuww += number[((int)(Math.random()*number.length))];
+		}
+		if(flag == 8)
+		{
+			 loww += loword[((int)(Math.random()*loword.length))];
+			 loww += loword[((int)(Math.random()*loword.length))];
+			 upww += upword[((int)(Math.random()*upword.length))];
+			 upww += upword[((int)(Math.random()*upword.length))];
+			 spww += spword[((int)(Math.random()*spword.length))];
+			 spww += spword[((int)(Math.random()*spword.length))];
+			 nuww += number[((int)(Math.random()*number.length))];
+			 nuww += number[((int)(Math.random()*number.length))];
+		}
+		if(flag == 10)
+		{
+			 loww += loword[((int)(Math.random()*loword.length))];
+			 loww += loword[((int)(Math.random()*loword.length))];
+			 upww += upword[((int)(Math.random()*upword.length))];
+			 upww += upword[((int)(Math.random()*upword.length))];
+			 upww += upword[((int)(Math.random()*upword.length))];
+			 spww += spword[((int)(Math.random()*spword.length))];
+			 spww += spword[((int)(Math.random()*spword.length))];
+			 spww += spword[((int)(Math.random()*spword.length))];
+			 nuww += number[((int)(Math.random()*number.length))];
+			 nuww += number[((int)(Math.random()*number.length))];
+		}
+		if(flag ==12)
+		{
+			 loww += loword[((int)(Math.random()*loword.length))];
+			 loww += loword[((int)(Math.random()*loword.length))];
+			 loww += loword[((int)(Math.random()*loword.length))];
+			 upww += upword[((int)(Math.random()*upword.length))];
+			 upww += upword[((int)(Math.random()*upword.length))];
+			 upww += upword[((int)(Math.random()*upword.length))];
+			 spww += spword[((int)(Math.random()*spword.length))];
+			 spww += spword[((int)(Math.random()*spword.length))];
+			 spww += spword[((int)(Math.random()*spword.length))];
+			 nuww += number[((int)(Math.random()*number.length))];
+			 nuww += number[((int)(Math.random()*number.length))];
+			 nuww += number[((int)(Math.random()*number.length))];
+		}
+		
+		 
+		 
+		
+		return (loww+upww+spww+nuww);
+	}
+	
+	
+	static String lowwo = "abcdefghijklmnopqrstuvwxyz";
+	static String upwod = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	static String spwor = "!@#$%^&*/{/}/[/]-/+/=/</>/,/./;/~";
+	static String numbe = "1234567890";
+	/**
+	 * 将字符串转化为数组可以使用的格式
+	 */
+	public static void produce()
+	{
+		for (int i = 0; i < numbe.length(); i++) {
+//			System.out.println(str.length());
+			System.out.print("\""+numbe.substring(i, i+1)+"\""+",");
+			
+		}
+	}
+	
+	
+	
+	
+
+}
